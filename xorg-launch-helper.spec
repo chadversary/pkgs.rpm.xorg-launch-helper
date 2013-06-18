@@ -1,12 +1,12 @@
 Summary: a small utility that transformx Xorg into a daemon
 Name: xorg-launch-helper
-Version: 4
+Version: 20130618.ac353a7
 Release: 0chadv1%{?dist}
 License: GPLv2
 Group: System Environment
 URL: https://github.com/sofar/xorg-launch-helper
 BuildArch:x86_64 i686
-Source0: http://foo-projects.org/~sofar/xorg-launch-helper/xorg-launch-helper-4.tar.gz
+Source0: xorg-launch-helper-20130618.ac353a7.tar.xz
 
 Requires: xorg-x11-server-Xorg
 
@@ -24,7 +24,6 @@ to be after the xorg.target.
 This mechanism can be used to delay the starting up of services
 that require a working X11 display server, such as any form
 of graphical process or X11 window manager.
-Gnome integration for the i3 window manager
 
 %prep
 %setup -q
@@ -50,5 +49,8 @@ install -D -m 644 %{_builddir}/%{name}-%{version}/README $RPM_BUILD_ROOT%{_docdi
 /usr/lib/systemd/user/xorg.target.wants/xorg.service
 
 %changelog
+* Tue Jun 17 2013 Chad Versace <chad@chad-versace.us> 20130618.ac353a7-0chadv1
+- Pull upstream signal handler fixes.
+
 * Tue Mar 12 2013 Chad Versace <chad@chad-versace.us> 4-0chadv1
 - Initial package
